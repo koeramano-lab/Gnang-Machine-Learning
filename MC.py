@@ -115,7 +115,18 @@ if selected== 'bmi':
             float(Height),
             float(Weight)
             ]])
-         bmi_predict = round(bmi_predict[0],2)
+
+            bmi_dict = {
+                0: 'อ่อนเเอมาก',
+                1: 'อ่อนแอ',
+                2: ' ปกติ',
+                3: 'น้ำหนักเกิน',
+                4: 'โรคอ้วน',
+                5: 'อ้วนขั้นรุนแรง'
+            }
+
+            result = bmi_dict[bmi_prediction[0]]
     st.success(bmi_prediction)
+
 
 
