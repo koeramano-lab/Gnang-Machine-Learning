@@ -115,10 +115,7 @@ if selected== 'bmi':
             float(Height),
             float(Weight)
             ]])
-        if Riding_prediction[0]==1:
-            Riding_prediction = 'Owner'
-        else:
-            Riding_prediction = 'Non Owner'
-    st.success(Riding_prediction)
-    st.success(Riding_prediction)
+         bmi_predict = round(bmi_predict[0],2)
+    st.success(bmi_prediction)
+
 
