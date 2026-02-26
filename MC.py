@@ -47,6 +47,11 @@ brand_map = {
     'Volkswagen': 9
 }
 
+gender = {
+    'Male': 0,
+    'Female': 1,
+}
+
 transmission_map = {
     'Automatic': 0,
     'Manual': 1
@@ -100,16 +105,15 @@ if selected == 'Used_cars':
 if selected== 'bmi':
     st.title('bmi')
     
-    Income = st.text_input('Income')
-    LotSize = st.text_input('LotSize')
-    Riding_prediction = ''
+    Gender = st.selectbox('เพศ', gender)
+    Height = st.text_input('Height')
+    Weight = st.text_input('Weight')
+    bmi_prediction = ''
     if st.button('Predict'):
-        Riding_prediction = riding_model.predict([[
-            float(Income),
-            float(LotSize)
+        bmi_prediction = bmi_model.predict([[
+            Gender[gender],
+            float(Height),
+            float(Weight)
             ]])
-        if Riding_prediction[0]==1:
-            Riding_prediction = 'Owner'
-        else:
-            Riding_prediction = 'Non Owner'
     st.success(Riding_prediction)
+
